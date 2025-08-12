@@ -2,6 +2,9 @@ import { Mail,Phone,MapPin,Github,Linkedin,Twitter } from 'lucide-react';
 import React from 'react'
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 const Contact = () => {
@@ -21,12 +24,18 @@ const sendEmail = (e) => {
       "Ld9KjO8sXBZMru1TB"   // EmailJS Public Key
     )
     .then(() => {
-      alert("Message Sent ✅");
+        toast.success("Message Sent ✅", {
+    position: "top-right",
+    autoClose: 3000,
+  });
       setLoading(false);
       formRef.current.reset();
     })
     .catch((err) => {
-      alert("Failed to send ❌");
+      toast.error("Failed to send ❌", {
+    position: "top-right",
+    autoClose: 3000,
+  });
       console.error(err);
       setLoading(false);
     });
@@ -142,6 +151,8 @@ const sendEmail = (e) => {
           </div>
         </div>
       </div>
+      <ToastContainer />
+
     </>
   );
 }
