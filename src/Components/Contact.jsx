@@ -127,11 +127,11 @@ const sendEmail = (e) => {
 
                   <div>
                     <h1 className="text-white font-semibold">Message</h1>
-                    <input
+                    <textarea
                       name="message"
                       type="text"
                       className="w-[20rem] h-[6rem] rounded-lg px-2 "
-                      placeholder="Tell me about your project..."
+                      placeholder="Your Message.."
                       required 
                     />
                   </div>
