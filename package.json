@@ -1,10 +1,10 @@
 {
   "name": "portfolio",
-  "homepage": "https://vinitparab.github.io/Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
