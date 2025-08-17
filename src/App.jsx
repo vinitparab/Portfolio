@@ -11,9 +11,14 @@ const App = () => {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
+  const contactRef = useRef(null); // Added ref for Contact
 
   const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+    const navbarHeight = 80; // height of your sticky navbar
+    window.scrollTo({
+      top: ref.current.offsetTop - navbarHeight,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -24,12 +29,13 @@ const App = () => {
         aboutRef={aboutRef}
         skillsRef={skillsRef}
         projectsRef={projectsRef}
+        contactRef={contactRef} // pass Contact ref
       />
       <Hero sectionRef={homeRef} />
       <About sectionRef={aboutRef} />
       <Skills sectionRef={skillsRef} />
       <Projects sectionRef={projectsRef} />
-      <Contact />
+      <Contact sectionRef={contactRef} /> {/* pass the ref here */}
     </div>
   );
 };

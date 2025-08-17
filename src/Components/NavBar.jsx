@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavBar = ({ onScroll, homeRef, aboutRef, skillsRef, projectsRef }) => {
+const NavBar = ({ onScroll, homeRef, aboutRef, skillsRef, projectsRef, contactRef }) => {
   return (
     <div className="bg-blue-950 w-full h-20 flex justify-between items-center sticky top-0 z-50">
       <div className="p-4 ml-10">
@@ -33,9 +33,7 @@ const NavBar = ({ onScroll, homeRef, aboutRef, skillsRef, projectsRef }) => {
             Skills
           </li>
           <li
-            onClick={() =>
-              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-            }
+            onClick={() => onScroll(contactRef)}
             className="hover:underline decoration-white underline-offset-4 cursor-pointer"
           >
             Contact

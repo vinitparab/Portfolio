@@ -4,27 +4,28 @@ import React from 'react';
 const Projects = ({ sectionRef }) => {
   const projects = [
     {
-      title: 'Personal Portfolio Website',
-      description: 'A modern, responsive portfolio built with React and Tailwind CSS.',
-      tech: ['React', 'Tailwind CSS'],
-      demo: 'https://functionalweb3portfolio.netlify.app',
-      code: 'https://github.com/vinitparab/portfolio',
+      title: "Personal Portfolio Website",
+      description:
+        "A modern, responsive portfolio built with React and Tailwind CSS.",
+      tech: ["React", "Tailwind CSS"],
+      demo: "https://preeminent-youtiao-401611.netlify.app",
+      code: "https://github.com/vinitparab/portfolio",
     },
     {
-      title: 'Diabetic Retinopathy Detection',
+      title: "Diabetic Retinopathy Detection",
       description:
-        'Deep learning-based system using CNN to detect diabetic retinopathy from retinal images. Deployed with Django full-stack and AWS.',
-      tech: ['Python', 'Django', 'CNN', 'AWS'],
-      demo: 'https://yourdiabeticretinopathyapp.vercel.app',
-      code: 'https://github.com/yourusername/diabetic-retinopathy',
+        "Deep learning-based system using CNN to detect diabetic retinopathy from retinal images. Deployed with Django full-stack and AWS.",
+      tech: ["Python", "Django", "CNN"],
+      demo: null, // Disabled demo
+      code: null, // Disabled code
     },
     {
-      title: 'Employee Management System',
+      title: "Employee Management System",
       description:
-        'A full-stack web application to manage employees, roles, and departments. Features authentication, CRUD operations, and dashboard analytics.',
-      tech: ['React', 'Node.js', 'Express', 'MySQL'],
-      demo: 'https://youremployeems.vercel.app',
-      code: 'https://github.com/yourusername/employee-management-system',
+        "A full-stack web application to manage employees, roles, and departments. Features authentication, CRUD operations, and dashboard analytics.",
+      tech: ["React , Tailwind Css"],
+      demo: null, // Disabled demo
+      code: "https://github.com/vinitparab/Functional-ReactJs/",
     },
   ];
 
@@ -69,32 +70,35 @@ const Projects = ({ sectionRef }) => {
 
               {/* Buttons */}
               <div className="flex gap-3 mt-4">
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 
-                               bg-gray-800 hover:bg-blue-600 hover:scale-105 
-                               transition-transform transition-colors duration-300 
-                               px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    <ExternalLink size={16} /> Demo
-                  </a>
-                )}
-                {project.code && (
-                  <a
-                    href={project.code}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 
-                               bg-gray-800 hover:bg-green-600 hover:scale-105 
-                               transition-transform transition-colors duration-300 
-                               px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    <Github size={16} /> Code
-                  </a>
-                )}
+                {/* Demo Button */}
+                <button
+                  disabled={!project.demo}
+                  onClick={() => project.demo && window.open(project.demo, '_blank')}
+                  className={`flex-1 flex items-center justify-center gap-2 
+                              px-3 py-2 rounded-md text-sm font-medium 
+                              transition-transform duration-300 ${
+                                project.demo
+                                  ? 'bg-gray-800 hover:bg-blue-600 hover:scale-105 cursor-pointer'
+                                  : 'bg-gray-600 cursor-not-allowed opacity-50'
+                              }`}
+                >
+                  <ExternalLink size={16} /> Demo
+                </button>
+
+                {/* Code Button */}
+                <button
+                  disabled={!project.code}
+                  onClick={() => project.code && window.open(project.code, '_blank')}
+                  className={`flex-1 flex items-center justify-center gap-2 
+                              px-3 py-2 rounded-md text-sm font-medium 
+                              transition-transform duration-300 ${
+                                project.code
+                                  ? 'bg-gray-800 hover:bg-green-600 hover:scale-105 cursor-pointer'
+                                  : 'bg-gray-600 cursor-not-allowed opacity-50'
+                              }`}
+                >
+                  <Github size={16} /> Code
+                </button>
               </div>
             </div>
           </div>
