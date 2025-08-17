@@ -7,8 +7,8 @@ const Projects = ({ sectionRef }) => {
       title: 'Personal Portfolio Website',
       description: 'A modern, responsive portfolio built with React and Tailwind CSS.',
       tech: ['React', 'Tailwind CSS'],
-      demo: 'https://yourportfolio.vercel.app',
-      code: 'https://github.com/yourusername/portfolio',
+      demo: 'https://yourportfolio.vercel.appfunctionalweb3portfolio.netlify.app',
+      code: 'https://github.com/vinitparab/portfolio',
     },
     {
       title: 'Diabetic Retinopathy Detection',
